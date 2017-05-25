@@ -6,12 +6,10 @@ moduleForComponent('extract-flickr-description', 'helper:extract-flickr-descript
   integration: true
 });
 
-// Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('inputValue', `<p><a href="https://www.flickr.com/people/puaforums/">PUA Forum1</a> posted a photo:</p> <p><a href="https://www.flickr.com/photos/puaforums/34082732533/" title="Best Niche Dating Sites"><img src="https://farm5.staticflickr.com/4228/34082732533_b3af05c4b1_m.jpg" width="80" height="80" alt="Best Niche Dating Sites" /></a></p> <p>Description</p>`);
 
   this.render(hbs`{{extract-flickr-description inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), '<p>Description</p>');
 });
-
