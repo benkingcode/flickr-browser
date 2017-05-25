@@ -1,1 +1,16 @@
-{{model}}
+<div class="grid">
+    {{#each model.items as |photo|}}
+        <div class="grid-item">
+            <div class="grid-item--photo">
+                <img src={{photo.media.m}}>
+            </div>
+            <div class="grid-item--details">
+                <a href={{photo.link}} target="_blank" rel="noopener">{{photo.title}}</a> by <a href={{extract-flickr-author-url photo.link}} target="_blank" rel="noopener">{{extract-flickr-author photo.author}}</a>
+                {{{extract-flickr-description photo.description}}}
+                {{#if photo.tags}}
+                    <p>Tags: {{photo.tags}}</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/each}}
+</div>
