@@ -7,7 +7,9 @@ export function extractFlickrDescription(params/*, hash*/) {
         matches.push(arguments[1]);
     });
 
-    return `<p>${(matches[2] || '')}</p>`;
+    if (matches[2]) {
+        return `<p>${matches[2]}</p>`;
+    }
 }
 
 export default Ember.Helper.helper(extractFlickrDescription);
