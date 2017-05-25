@@ -5,7 +5,7 @@
                 <a href={{photo.link}} target="_blank" rel="noopener"><img src={{photo.media.m}}></a>
             </div>
             <div class="grid-item--details">
-                <a href={{photo.link}} target="_blank" rel="noopener">{{photo.title}}</a> by <a href={{extract-flickr-author-url photo.link}} target="_blank" rel="noopener">{{extract-flickr-author photo.author}}</a>
+                <a href={{photo.link}} target="_blank" rel="noopener">{{{photo.title}}}</a> by <a href={{extract-flickr-author-url photo.link}} target="_blank" rel="noopener">{{{extract-flickr-author photo.author}}}</a>
                 {{{extract-flickr-description photo.description}}}
                 {{#if photo.tags}}
                     <p>Tags: {{photo.tags}}</p>
